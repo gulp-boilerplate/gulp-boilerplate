@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util');
 
-module.exports = function (tasks, config) {
+function loadTasks(config) {
+    var tasks = Object.keys(config);
     tasks.forEach(function (name) {
         var taskConfig = config[name],
             task = require('./tasks/' + name)(taskConfig);
@@ -10,4 +11,11 @@ module.exports = function (tasks, config) {
     });
 
     return gulp;
+}
+
+module.exports = function (config) {
+    if (config) {
+        return loadTasks(config);
+    }
+    return loadTasks;
 };
