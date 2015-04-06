@@ -14,16 +14,16 @@ Wouldn't be great if:
 
 Basically this is the problem that solves tools like npm, bower and yeoman
 
-I always loved [Grunt's](grunt) configuration over code style. But the (literally) flowing way of declaring thing in [Gulp](gulp) is way too powerful, easy and beautiful. So I tried here to combine the two  things.
+I always loved [Grunt's](http://gruntjs.com/sample-gruntfile) configuration over code style. But the (literally) flowing way of declaring thing in [Gulp](http://gulpjs.com/) is way too powerful, easy and beautiful. So I tried here to combine the two  things.
 
 ###Update
-Just before publishing this I was searching the npm to see if the name gulp-boilerplate would conflict with another project, the I found [boilerplate-gulp](boilerplate-gulp) which is a very clever way of reaching the same goals and he even came up with almost the same name I later took.
+Just before publishing this I was searching the npm to see if the name gulp-boilerplate would conflict with another project, the I found [boilerplate-gulp](https://github.com/oztu/boilerplate-gulp) which is a very clever way of reaching the same goals and he even came up with almost the same name I later took.
 
-Instead of doing a monolithic repo (which was my initial idea) [@otzu](otzu) splits the tasks in smaller repos to require them as needed.
+Instead of doing a monolithic repo (which was my initial idea) [@otzu](https://github.com/oztu) splits the tasks in smaller repos to require them as needed.
 
 Still I like my approach better and I took some of his ideas about reorganizing code and reworked the whole thing.
 
-Thanks [@otzu](otzu)!
+Thanks [@otzu](https://github.com/oztu)!
 
 ##Basic Usage
 
@@ -203,8 +203,3 @@ var tasks = require('./config.js'),
 
 gulp.task('default', ['sometask'])
 ```
-
-[grunt]:http://gruntjs.com/sample-gruntfile
-[gulp]:http://gulpjs.com/
-[otzu]:https://github.com/oztu
-[boilerplate-gulp]:https://github.com/oztu/boilerplate-gulp
