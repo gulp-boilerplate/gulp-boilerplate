@@ -1,4 +1,3 @@
-Reference-style:
 ![Gulp Boilerplate][logo]
 
 #Gulp Boilerplate
@@ -216,4 +215,4 @@ gulpTasks(gulp, tasks)
 gulp.task('default', ['sometask'])
 ```
 
-[logo]: https://github.com/gulp-boilerplate/gulp-boilerplate/raw/master/src/logo.svg "Gulp Boilerplate"
+[logo]: https://raw.githubusercontent.com/gulp-boilerplate/gulp-boilerplate/master/logo.svg "Gulp Boilerplate"
