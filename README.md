@@ -1,4 +1,7 @@
-#gulp-boilerplate
+Reference-style:
+![Gulp Boilerplate][logo]
+
+#Gulp Boilerplate
 
 Easy way of project workflow house keeping.
 
@@ -30,13 +33,14 @@ Thanks [@otzu](https://github.com/oztu)!
 Install `gulp-boilerplate` and `gulp-boilerplate-*` tasks with `npm`
 
 ```sh
-$ npm install gulp-boilerplate gulp-boilerplate-copy gulp-boilerplate-clean
+$ npm install gulp gulp-boilerplate gulp-boilerplate-copy gulp-boilerplate-clean
 ```
 
-Create your gulpfile and require gulp-boilerplate with your tasks configuration:
+Create your gulpfile and require gulp and gulp-boilerplate with your tasks configuration:
 
 ```javascript
-var gulp-tasks = require('gulp-boilerplate')
+var gulp = require('gulp'),
+    gulpTasks = require('gulp-boilerplate')
 ```
 
 Configure and load your tasks:
@@ -57,7 +61,7 @@ var tasks = {
     }
 }
 
-gulp = gulp-tasks(tasks);
+gulpTasks(gulp, tasks);
 ```
 
 Now you are ready to do:
@@ -99,6 +103,9 @@ This is a gulp glob, the same used for gulp.src
 
 ####`dest: <string>`
 Destination of the file(s)
+
+####`deps: <array of strings>`
+This is an array of tasks just like the ones you use with gulp.task
 
 ####`options: <object>`
 An arbitrary object to pass options for the task. Consider that this is not especific for one gulp-plugin so you can pass whatever needed with this object as long it complies with the task definition.
@@ -158,7 +165,10 @@ In `gulpfile.js`
 
 ```javascript
 var tasks = require('./config.js'),
-    gulp = require('gulp-boilerplate')(tasks)
+    gulp = require('gulp'),
+    gulpTasks = require('gulp-boilerplate');
+
+gulpTasks(gulp, tasks);
 ```
 
 then you can call the gulp tasks in the console
@@ -199,7 +209,11 @@ and in your `gulpfile.js`
 
 ```javascript
 var tasks = require('./config.js'),
-    gulp = require('gulp-boilerplate')(tasks)
+    gulp = require('gulp')
+    gulpTasks = require('gulp-boilerplate');
 
+gulpTasks(gulp, tasks)
 gulp.task('default', ['sometask'])
 ```
+
+[logo]: https://github.com/gulp-boilerplate/gulp-boilerplate/raw/master/src/logo.svg "Gulp Boilerplate"
