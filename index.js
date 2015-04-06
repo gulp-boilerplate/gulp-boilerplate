@@ -1,21 +1,23 @@
-var gulp = require('gulp'),
-    gutil = require('gulp-util');
-
-function loadTasks(config) {
+function loadTasks(gulp, config) {
     var tasks = Object.keys(config);
     tasks.forEach(function (name) {
         var taskConfig = config[name],
-            task = require(taskConfig.def)(taskConfig);
+            task = require(taskConfig.def)(taskConfig),
+            deps =  taskConfig.deps || [];
 
-        gulp.task(name, task);
+        if (deps.length !== 0) {
+            gulp.task(name, taskConfig.deps, task);
+        } else {
+            gulp.task(name, task);
+        }
     });
 
     return gulp;
 }
 
-module.exports = function (config) {
+module.exports = function (gulp, config) {
     if (config) {
-        return loadTasks(config);
+        return loadTasks(gulp, config);
     }
     return loadTasks;
 };
