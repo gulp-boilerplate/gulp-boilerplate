@@ -215,4 +215,4 @@ gulpTasks(gulp, tasks)
 gulp.task('default', ['sometask'])
 ```
 
-[logo]: https://raw.githubusercontent.com/gulp-boilerplate/gulp-boilerplate/master/logo.svg "Gulp Boilerplate"
+[logo]: https://raw.githubusercontent.com/gulp-boilerplate/gulp-boilerplate/master/logo.png "Gulp Boilerplate"
