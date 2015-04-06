@@ -5,7 +5,7 @@ function loadTasks(config) {
     var tasks = Object.keys(config);
     tasks.forEach(function (name) {
         var taskConfig = config[name],
-            task = require('./tasks/' + name)(taskConfig);
+            task = require(taskConfig.def)(taskConfig);
 
         gulp.task(name, task);
     });
