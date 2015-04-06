@@ -1,5 +1,5 @@
 {
-  "name": "init-gulp",
+  "name": "gulp-boilerplate",
   "version": "0.1.0",
   "description": "Bootstrap for gulp tasks",
   "main": "gulpfile.js",
@@ -11,24 +11,8 @@
     "tasks"
   ],
   "dependencies": {
-      "browserify":"*",
-      "coffeeify":"*",
-      "uglifyify":"*",
-      "vinyl-source-stream":"*",
-      "exorcist":"*",
-      "gulp":"*",
-      "gulp-imagemin":"*",
-      "symbols":"*",
-      "gulp":"*",
-      "gulp-uglify":"*",
-      "gulp-util":"*",
-      "gulp-concat":"*",
-      "gulp-order":"*",
-      "gulp-print":"*",
-      "gulp-less":"*",
-      "gulp-csso":"*",
-      "gulp-uncss":"*",
-      "gulp-autoprefixer":"*"
+    "gulp": "^3.8.11",
+    "gulp-util": "^3.0.4"
   },
   "author": "Marcos Hernandez <marcoslhc@gmail.com>",
   "license": "MIT"
