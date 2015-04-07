@@ -38,8 +38,7 @@ $ npm install gulp gulp-boilerplate gulp-boilerplate-copy gulp-boilerplate-clean
 Create your gulpfile and require gulp and gulp-boilerplate with your tasks configuration:
 
 ```javascript
-var gulp = require('gulp'),
-    gulpTasks = require('gulp-boilerplate')
+var gulpTasks = require('gulp-boilerplate')
 ```
 
 Configure and load your tasks:
@@ -60,7 +59,7 @@ var tasks = {
     }
 }
 
-gulpTasks(gulp, tasks);
+gulp = gulpTasks(tasks)
 ```
 
 Now you are ready to do:
@@ -94,19 +93,24 @@ The TCOo is an object that declares and configures the task.
 Each key of this object is the name of the task
 each task has a set of properties:
 
-####`def: <string>`
+####def:
+type: `string`
 String with basically the same content for requiring the task. Is the task lives in `node_module` then you can pass the name of the module. Else you can pass a relative or absolute path
 
-####`src: <string> or <array of strings>`
+####src:
+type: `string` or `array`
 This is a gulp glob, the same used for gulp.src
 
-####`dest: <string>`
+####dest:
+type: `string`
 Destination of the file(s)
 
-####`deps: <array of strings>`
+####deps:
+type: `array`
 This is an array of tasks just like the ones you use with gulp.task
 
-####`options: <object>`
+####options:
+type: `object`
 An arbitrary object to pass options for the task. Consider that this is not especific for one gulp-plugin so you can pass whatever needed with this object as long it complies with the task definition.
 
 ###Extending and defining new tasks:
@@ -164,10 +168,9 @@ In `gulpfile.js`
 
 ```javascript
 var tasks = require('./config.js'),
-    gulp = require('gulp'),
-    gulpTasks = require('gulp-boilerplate');
+    gulp = require('gulp-boilerplate')(tasks);
 
-gulpTasks(gulp, tasks);
+gulp.task('default', ['css', 'scripts'])
 ```
 
 then you can call the gulp tasks in the console
@@ -177,7 +180,9 @@ $ gulp scripts css
 ```
 
 ### Define new tasks
-You can define project specific tasks. I find useful to keep them in the task folder, so:
+Sometimes you don't want your tasks hidden in the node_modules, or are tasks specific for that project or simply you are still experimenting. So you might want to specify your tasks in your codebase. This is how I do this.
+
+I create a folder called tasks, and inside I put all my tasks. I could be as stand alone .js files or a complete package inside a subfolder:
 
 ```
 project
@@ -197,7 +202,7 @@ then in your `config.js` you can do:
 ```javascript
 module.exports = {
     sometask: {
-        def: 'tasks/sometask'
+        def: 'tasks/sometask' //put your task module in the same way you would require it
         src: ['./js/*.js'],
         dest: './dist/js/main.js'
     }
@@ -208,10 +213,8 @@ and in your `gulpfile.js`
 
 ```javascript
 var tasks = require('./config.js'),
-    gulp = require('gulp')
-    gulpTasks = require('gulp-boilerplate');
+    gulp = require('gulp-boilerplate')(tasks);
 
-gulpTasks(gulp, tasks)
 gulp.task('default', ['sometask'])
 ```
 
