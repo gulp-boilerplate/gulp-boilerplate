@@ -38,7 +38,7 @@ $ npm install gulp gulp-boilerplate gulp-boilerplate-copy gulp-boilerplate-clean
 Create your gulpfile and require gulp and gulp-boilerplate with your tasks configuration:
 
 ```javascript
-var gulpTasks = require('gulp-boilerplate')
+var gulpTasks = require('gulp-boilerplate');
 ```
 
 Configure and load your tasks:
@@ -59,7 +59,7 @@ var tasks = {
     }
 }
 
-gulp = gulpTasks(tasks)
+gulp = gulpTasks(tasks);
 ```
 
 Now you are ready to do:
@@ -161,7 +161,7 @@ module.exports = {
         src: ['./less/**/*.less'],
         dest: './dist/css/site.css'
     }
-}
+};
 ```
 
 In `gulpfile.js`
@@ -170,7 +170,7 @@ In `gulpfile.js`
 var tasks = require('./config.js'),
     gulp = require('gulp-boilerplate')(tasks);
 
-gulp.task('default', ['css', 'scripts'])
+gulp.task('default', ['css', 'scripts']);
 ```
 
 then you can call the gulp tasks in the console
@@ -206,7 +206,7 @@ module.exports = {
         src: ['./js/*.js'],
         dest: './dist/js/main.js'
     }
-}
+};
 ```
 
 and in your `gulpfile.js`
@@ -215,7 +215,7 @@ and in your `gulpfile.js`
 var tasks = require('./config.js'),
     gulp = require('gulp-boilerplate')(tasks);
 
-gulp.task('default', ['sometask'])
+gulp.task('default', ['sometask']);
 ```
 
 [logo]: https://raw.githubusercontent.com/gulp-boilerplate/gulp-boilerplate/master/logo.png "Gulp Boilerplate"
