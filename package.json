@@ -12,7 +12,8 @@
   ],
   "dependencies": {
     "gulp": "^3.8.11",
-    "gulp-util": "^3.0.4"
+    "gulp-util": "^3.0.4",
+    "resolve": "^1.1.6"
   },
   "author": "Marcos Hernandez <marcoslhc@gmail.com>",
   "license": "MIT"
