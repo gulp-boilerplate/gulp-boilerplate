@@ -2,40 +2,33 @@
 
 #Gulp Boilerplate
 
-Easy way of project workflow house keeping.
+Easy way of workflow house keeping.
 
 ##Motivation and inspiration
-Most of the time I spent in a project is creating the necessary workflow. Although I pretty much remember, have a working understanding of the tool I use and this task doesn't represents a big challenge in current times (until something changes again and we'll need to learn something new), is still an amount of time I rather use in actual creative work.
+Most of the time I spent in a project is creating the necessary workflow. Although I know how to use the tools I use and this task doesn't represents a big challenge in current times (until something changes again and we'll need to learn something new), is still an amount of time I rather use in actual creative work.
 
-Sometimes, when working in a project, I made a discovery, find a simpler way of doing thing or simply start using a new tool and I wish it still available to other projects.
-
-Wouldn't be great if:
-
-1. With just one command and a few lines of code we could have the whole workflow (or most of it) working
-2. Easily share code between projects.
-
-Basically this is the problem that solves tools like npm, bower and yeoman
+Sometimes, when working in a project, I make a discovery, I find a simpler way of doing thing or simply I start using a new tool and I want it available to other projects right away.
 
 I always loved [Grunt's](http://gruntjs.com/sample-gruntfile) configuration over code style. But the (literally) flowing way of declaring thing in [Gulp](http://gulpjs.com/) is way too powerful, easy and beautiful. So I tried here to combine the two  things.
 
 ###Update
-Just before publishing this I was searching the npm to see if the name gulp-boilerplate would conflict with another project, the I found [boilerplate-gulp](https://github.com/oztu/boilerplate-gulp) which is a very clever way of reaching the same goals and he even came up with almost the same name I later took.
+Just before publishing this I was searching npm to see if the name gulp-boilerplate would conflict with another project, then I found [boilerplate-gulp](https://github.com/oztu/boilerplate-gulp) which is a very clever way of reaching the same goals.
 
-Instead of doing a monolithic repo (which was my initial idea) [@otzu](https://github.com/oztu) splits the tasks in smaller repos to require them as needed.
+Instead of doing a monolithic repo (which was my initial idea) [@otzu](https://github.com/oztu) splits the tasks in smaller npm packages to require them as needed.
 
-Still I like my approach better and I took some of his ideas about reorganizing code and reworked the whole thing.
+Still I like my approach better and I took some of his ideas about reorganizing code and reworked my whole thing.
 
 Thanks [@otzu](https://github.com/oztu)!
 
 ##Basic Usage
 
-Install `gulp-boilerplate` and `gulp-boilerplate-*` tasks with `npm`
+Install `gulp`, `gulp-boilerplate` and `gulp-boilerplate-*` tasks with `npm`
 
 ```sh
 $ npm install gulp gulp-boilerplate gulp-boilerplate-copy gulp-boilerplate-clean
 ```
 
-Create your gulpfile and require gulp and gulp-boilerplate with your tasks configuration:
+Create your gulpfile and require gulp-boilerplate with your tasks configuration:
 
 ```javascript
 var gulpTasks = require('gulp-boilerplate');
@@ -67,12 +60,15 @@ Now you are ready to do:
 ```sh
 $ gulp clean copy
 ```
+>**Note:** *Though you don't need to require it in your gulpfile, you still need to install*
+>***gulp*** *,* ***gulp-boilerplate*** *needs the local copy of* ___gulp___ *to work*
 
 ***gulp*** is still ***gulp***, so you still can define new tasks, bundles, etc:
 
 ```javascript
 
-// declare a new task 'task3' dependent of 'task1' and 'task2'
+// declare a new task 'task3' dependent 
+// of 'task1' and 'task2'
 gulp.task('dist', ['clean', 'copy']);
 
 // declare a new task 'task4'
@@ -80,7 +76,8 @@ gulp.task('anotherTask', function(){
     ...
 });
 
-// declare a new synchronous task 'task5' dependent of 'task1' and 'task4'
+// declare a new asynchronous task 'task5' 
+// dependent of 'task1' and 'task4'
 gulp.task('yetAnotherTask', ['clean', 'otherTask'], function(cb){
     ...
     cb();
