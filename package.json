@@ -1,6 +1,6 @@
 {
   "name": "gulp-boilerplate",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "description": "Bootstrap for gulp tasks",
   "main": "gulpfile.js",
   "scripts": {

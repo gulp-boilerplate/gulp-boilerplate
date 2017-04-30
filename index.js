@@ -1,15 +1,4 @@
-var localGulp, gulp,
-    resolve = require('resolve');
-
-try {
-        localGulp = resolve.sync('gulp', {basedir: process.cwd()});
-        gulp = require(localGulp);
-} catch (e) {
-        console.log('No local gulp found. Use npm install gulp');
-        process.exit(1);
-}
-
-function loadTasks(config) {
+function loadTasks(gulp, config) {
     var tasks = Object.keys(config);
 
     tasks.forEach(function (name) {
@@ -27,9 +16,9 @@ function loadTasks(config) {
     return gulp;
 }
 
-module.exports = function (config) {
+module.exports = function (gulp, config) {
     if (config) {
-        return loadTasks(config);
+        return loadTasks(gulp, config);
     }
     return loadTasks;
 };
